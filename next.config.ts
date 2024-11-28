@@ -5,6 +5,13 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/:path(.+)",
+        has: [
+          {
+            type: "query",
+            key: "path",
+            value: "(?!favicon\\.ico$).*"
+          }
+        ],
         destination: "/",
         permanent: false,
       },
